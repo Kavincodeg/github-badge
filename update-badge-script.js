@@ -15,8 +15,10 @@ fetch(repoCountUrl, {
 })
     .then((res) => res.json())
     .then((json) => {
-        updateBadge(json.public_repos);
-    });
+    console.log(json);
+    console.log("REPOS", json.public_repos);
+    updateBadge(json.public_repos);
+});
 
 function updateBadge(repoCount) {
     try {
